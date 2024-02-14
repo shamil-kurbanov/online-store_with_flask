@@ -20,6 +20,11 @@ def product(key):
     return render_template('product.html', product=product)
 
 
+@product_blueprint.app_template_filter('full_name')
+def full_name_filter(product):
+    return '{0} / {1}'.format(product['category'], product['name'])
+
+
 @product_blueprint.context_processor
 def some_processor():
     def full_name(product):

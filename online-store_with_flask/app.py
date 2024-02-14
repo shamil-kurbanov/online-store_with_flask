@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 from product.views import product_blueprint
+import ccy
 
 app = Flask(__name__)
 app.register_blueprint(product_blueprint)
