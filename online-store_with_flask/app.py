@@ -1,12 +1,16 @@
-from flask import Flask
+from flask import Flask, render_template, request
+from product.views import product_blueprint
 
 app = Flask(__name__)
+app.register_blueprint(product_blueprint)
 
 
 @app.route('/')
-def hello_world():  # put application's code here
-    return 'Hello World!'
+@app.route('/hello')
+def hello_world():
+    user = request.args.get('user', 'Shamil')
+    return render_template('index.html', user=user)
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
