@@ -1,0 +1,8 @@
+{% macro render_field(name, class='', value='', type='text') -%}
+
+<label>
+    <input type="{{ type }}" name="{{ name }}" class="{{ class }}" value="{{ value }}"/>
+</label>
+
+{%- endmacro %}
+

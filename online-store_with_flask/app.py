@@ -13,5 +13,12 @@ def hello_world():
     return render_template('index.html', user=user)
 
 
+@app.template_filter('format_currency')
+def format_currency_filter(amount):
+    currency_code = ccy.countryccy(request.accept_languages.best[-2:])
+    return '{0} {1}'.format(currency_code, amount)
+
+
+
 if __name__ == '__main__':
     app.run(debug=True)

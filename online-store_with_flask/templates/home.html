@@ -10,6 +10,15 @@
                  }}">{{ product['name'] }}</a>
          <small>$ {{ product['price'] }}</small>
      </h2>
+
+     {% from '_helpers.html' import render_field %}
+<!--
+<fieldset>
+{{ render_field('username', 'icon-user') }}
+{{ render_field('password', 'icon-key', type='password') }}
+</fieldset>
+-->
+
  </div>
  </div>
  {% endfor %}
